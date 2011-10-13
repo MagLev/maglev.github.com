@@ -26,10 +26,20 @@ nav ul li a { font-size: 28px; }
 a { text-decoration: none; color: #888; }
 a:hover { color: #222; background: #ccc; }
 
+h1 { font-size: 24px; }
+h2 { font-size: 18px; }
+h3 { font-size: 14px; }
+
 #content { height: 100%; width: 100%; }
 aside { float: left; }
 aside ul { list-style: none; }
 #content article { margin: 0 0 0 170px; }
 .clear { clear: both; }
 footer { height: 30px; text-align: center;}
-pre { background: #000; color: #fff; padding: 15px;}
+pre {
+    margin-left:  15px;
+    margin-right: 30px;
+    background: #333;
+    color: #eee;
+    padding: 15px;
+}

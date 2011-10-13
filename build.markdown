@@ -2,14 +2,7 @@
 title: MagLev Build
 layout: docs
 ---
-Build Quickstart
-================
-
-You need there to run MagLev:
-
-1. GemStone/S VM (install via <tt>install.sh</tt>)
-2. MagLev image (what we will build here)
-3. [MagLev source](https://github.com/maglev/maglev)
+# Build MagLev from Source
 
 ## Step 1: Install the MagLev source:
 
@@ -81,7 +74,6 @@ stone alongside the base Smalltalk and Ruby objects.
 The scripts that load the ruby objects into the image are a combination of
 rakefiles (<tt>rakelib/build.rake</tt>) and topaz scripts.  Topaz is a C
 program that runs a GemStone VM, and provides a command line interface to
-that VM; see
-http://community.gemstone.com/download/attachments/6816350/GS64-Topaz-3.0.pdf?version=1
-.
+that VM; see the
+[Topaz Programming Guide](http://community.gemstone.com/download/attachments/6816350/GS64-Topaz-3.0.pdf?version=1).
 
