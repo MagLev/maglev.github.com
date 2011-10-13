@@ -28,6 +28,7 @@ a:hover { color: #222; background: #ccc; }
 
 #content { height: 100%; width: 100%; }
 aside { float: left; }
+aside ul { list-style: none; }
 #content article { margin: 0 0 0 170px; }
 .clear { clear: both; }
 footer { height: 30px; text-align: center;}
