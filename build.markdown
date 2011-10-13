@@ -11,11 +11,11 @@ layout: docs
 
 ## Step 2: Install VM
 
+    $ cd $MAGLEV_HOME
+    $ ./install.sh
+
 See the detailed instructions at <https://github.com/maglev/maglev> for the
 value of "NNN":
-
-    $ cd $MAGLEV_HOME
-    $ ./install.sh NNN
 
 ## Step 3: Build MagLev image and start it
 
@@ -30,7 +30,7 @@ it in <tt>$MAGLEV_HOME/bin/extent0.ruby.dbf</tt>:
 Now you should be able to run ruby on MagLev:
 
 
-    $ mruby -e 'puts "Hello from #{RUBY_ENGINE}"'
+    $ maglev-ruby -e 'puts "Hello from #{RUBY_ENGINE}"'
     Hello from maglev
 
 You can run the tests:
