@@ -1,6 +1,6 @@
 ---
 title: MagLev Build
-layout: default
+layout: docs
 ---
 Build Quickstart
 ================
