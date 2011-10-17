@@ -1,5 +1,6 @@
 header, footer, aside, nav, article { display: block; }
 body {
+    width: 60em;
     color: #444;
     padding: 10px;
     margin: 0;
@@ -30,7 +31,8 @@ h1 { font-size: 24px; }
 h2 { font-size: 18px; }
 h3 { font-size: 14px; }
 
-#content { height: 100%; width: 100%; }
+
+#content { height: 100%;  }
 aside { float: left; }
 aside ul { list-style: none; }
 #content article { margin: 0 0 0 170px; }

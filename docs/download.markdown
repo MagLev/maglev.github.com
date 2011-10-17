@@ -10,9 +10,9 @@ title: Download MagLev
 * root access so you can increase default shared memory settings (only during initial install)
 
 There are three ways to install MagLev:
-* Use the installer
-* Install with Ruby Version Manager (RVM)
-* Install from GitHub
+* [Use the installer](#use_the_installer)
+* [Install with Ruby Version Manager (RVM)](#install_with_ruby_version_manager)
+* [Install from GitHub](#install_from_github)
 
 ## Use the installer
 
@@ -49,7 +49,7 @@ version of MagLev. Reverting to an older version is as simple as stopping
 MagLev, changing `$MAGLEV_HOME` to point to the prior version, and
 restarting.
 
-## Install with Ruby Version Manager (RVM)
+## Install with Ruby Version Manager
 
 [RVM](http://rvm.beginrescueend.com) is useful if you want to compare
 behavior of various Ruby implementations or versions of MagLev.  Install

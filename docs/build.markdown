@@ -14,8 +14,8 @@ layout: docs
     $ cd $MAGLEV_HOME
     $ ./install.sh
 
-See the detailed instructions at <https://github.com/maglev/maglev> for the
-value of "NNN":
+You may specify a particular version of the VM, see the detailed
+instructions at <https://github.com/maglev/maglev> for details.
 
 ## Step 3: Build MagLev image and start it
 
