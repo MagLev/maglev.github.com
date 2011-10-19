@@ -48,4 +48,6 @@ pre {
     background: #333;
     color: #eee;
     padding: 15px;
+    border-radius: 15px;
+    -moz-border-radisu: 15px;
 }
