@@ -67,9 +67,7 @@ Maglev.persistent do
   # Monkey patch the Rabbit class
   class Rabbit
     def self.breed
-      warren = []
-      5.times { warren << Rabbit.new }
-      warren
+      5.times.map { Rabbit.new }
     end
   end
 end
