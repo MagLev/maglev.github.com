@@ -36,7 +36,7 @@ defines a transient class named `Rabbit`, then exits, destroying all of
 that work.  You cannot access `Rabbit` from a new VM:
 
     $ maglev-ruby rabbit.rb 
-    [@miami hat_trick (master)]$ maglev-ruby -e 'puts Rabbit.new.inspect'
+    $ maglev-ruby -e 'puts Rabbit.new.inspect'
     ERROR 2730 , uninitialized constant Rabbit (NameError)
 
 `maglev-ruby` provides a `-Mcommit` option that will run within the context
@@ -44,7 +44,7 @@ of a `Maglev.persistent` block, and do a commit on exit.  So we can do
 this:
 
     $ maglev-ruby -Mcommit rabbit.rb 
-    [@miami hat_trick (master)]$ maglev-ruby -e 'puts Rabbit.new.inspect'
+    $ maglev-ruby -e 'puts Rabbit.new.inspect'
 
      () ()
     ( '.' )
