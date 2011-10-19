@@ -8,40 +8,33 @@ layout: docs
 1. Install MagLev with [RVM](http://rvm.beginrescueend.com):
 
        rvm install maglev
+       rvm use maglev
 
-   Or, follow the more [detailed instructions](/download.html).
-
-1. Setup your environment:
-
-       export MAGLEV_HOME=<path_to_the_directory_containing_this_README>
-       export PATH=$MAGLEV_HOME/bin:$PATH
-
-1. Start the MagLev server
-
-       $ cd $MAGLEV_HOME
-       $ rake maglev:start
+   Or, follow the more [detailed instructions](/download.html) to build
+   your own MagLev from source.
 
 1. Check status of MagLev server
 
-       $ cd $MAGLEV_HOME
-       $ rake
+       $ $MAGLEV_HOME/bin/maglev status
+       MAGLEV_HOME = /users/pmclain/.rvm/rubies/maglev-26852
        Status   Version    Owner    Pid   Port   Started     Type  Name
        ------- --------- --------- ----- ----- ------------ ------ ----
-         OK    3.0.1     pmclain   33046 58301 Jul 19 12:31 Stone  maglev
-         OK    3.0.1     pmclain   33047 58291 Jul 19 12:31 cache  maglev~d646de6d79d7b341
+         OK    3.1.0     pmclain   48498 55390 Oct 19 10:06 Stone  maglev
+         OK    3.1.0     pmclain   48499 55382 Oct 19 10:06 cache  maglev~3330cca3ca1d1f74
 
    If the server is not running, you'll see output like:
 
-       $ rake
        gslist[Info]: No GemStone servers.
 
 1. Run some Ruby!
 
        $ maglev-ruby $MAGLEV_HOME/examples/hello_maglev.rb
-       RUBY_VERSION:  1.8.7
-       RUBY_ENGINE:   maglev
-       Hello from MagLev
+       Hello from:
+         RUBY_VERSION: 1.8.7
+         RUBY_ENGINE: maglev
 
-Then go play with the
-[examples](https://github.com/MagLev/maglev/tree/master/examples) and read
-the [further docs](/docs/further_docs.html)
+# Next
+
+* [Learn about MagLev](/docs/learn.html)
+* Play with the [MagLev examples](https://github.com/MagLev/maglev/tree/master/examples)
+
