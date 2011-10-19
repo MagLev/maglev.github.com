@@ -9,7 +9,7 @@ body {
 #masthead { height: 150px; }
 #masthead img { display: block; margin-left: auto; margin-right: auto; }
 
-nav { margin-left: 130px;  }
+nav { margin-left: 150px;  }
 
 nav ul {
     list-style: none;
@@ -24,6 +24,10 @@ nav ul li {
 }
 nav ul li a { font-size: 28px; }
 
+
+li { padding-top: 5px; }
+ul li ul { padding-left: 1em;  }
+
 a { text-decoration: none; color: #888; }
 a:hover { color: #222; background: #ccc; }
 
@@ -35,7 +39,7 @@ h3 { font-size: 14px; }
 #content { height: 100%;  }
 aside { float: left; }
 aside ul { list-style: none; }
-#content article { margin: 0 0 0 170px; }
+#content article { margin: 0 0 0 200px; }
 .clear { clear: both; }
 footer { height: 30px; text-align: center;}
 pre {

@@ -23,12 +23,10 @@ The following command will turn the smalltalk image
 (<tt>$MAGLEV_HOME/gemstone/bin/extent0.dbf</tt>) into a Ruby image and put
 it in <tt>$MAGLEV_HOME/bin/extent0.ruby.dbf</tt>:
 
-    $ rake build:image
-    $ rake stone:create[maglev]
+    $ rake build:maglev
     $ rake maglev:start
 
 Now you should be able to run ruby on MagLev:
-
 
     $ maglev-ruby -e 'puts "Hello from #{RUBY_ENGINE}"'
     Hello from maglev
