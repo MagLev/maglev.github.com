@@ -55,19 +55,21 @@ affect MagLev itself, like `rake maglev:stop`. You have to use the
 This version is best for MagLev contributors and for developers who want to
 live on the bleeding edge or use git functionality.
 
-1. Clone the MagLev github repository
+1. Clone the MagLev github repository and set `$MAGLEV_HOME`
 
        git clone git://github.com/MagLev/maglev.git
-
+       cd maglev
+       export MAGLEV_HOME=$PWD
+       
 1. Install the VM.  If this is the first time you're installing MagLev,
    run:
 
-       ./install.sh
+       ./install.sh     # from the maglev directory
 
    Or, if you've already run `install.sh` on the machine, then you can use
    the upgrade script:
 
-       ./upgrade.sh
+       ./update.sh     # from the maglev directory
 
 To use MagLev, you need to run `install.sh` at least once.  `install.sh`
 does everything `upgrade.sh` does, but also does some initial configuration
