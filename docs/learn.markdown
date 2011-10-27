@@ -108,8 +108,8 @@ so bear with me:
 
 First, we installed an additional primitive that allows persisting Threads.
 
-    One :009:0> Thread.start { callcc {|cc| $cont = cc}; p "Resume from One pretty continuation" }
-    "Resume from One pretty continuation"
+    One :009:0> Thread.start { callcc {|cc| $cont = cc}; p "Run after One pretty callcc" }
+    "Run after One pretty callcc"
     => #<GsProcess:0xdf69e01 false>
     One :010:0> $cont
     => #<Continuation:0xecfc401 @_st_process=#<GsProcess:0xdf6a901 sleep>>
@@ -134,7 +134,7 @@ On to the second VM:
     Two :010:0> $cont = Maglev::PERSISTENT_ROOT["cc"]
     => #<Continuation:0xecfc401 @_st_process=#<GsProcess:0xdf6a901 sleep>>
     Two :011:0> Thread.start { $cont.call }
-    "Resume from One pretty continuation"
+    "Run after One pretty callcc"
     => #<GsProcess:0xdd33b01 sleep>
 
 Wow. We just moved a complete stack on to a different VM and resumed it there.
