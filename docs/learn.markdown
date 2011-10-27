@@ -79,10 +79,10 @@ refresh our transactional view in order to see the new data:
     One :005:0> Maglev::PERSISTENT_ROOT[:demo]
     => ["Hello from #2", Mon Oct 17 13:45:52 -0700 2011]
 
-Now we see the new data from irb Two.   Most of the standard Ruby objects
-are already capable of being persisted (there are a few that don't make
-sense to see in another VM, like Mutex and Socket).  You can even
-persist `Proc`s and `Thread`s and run them on other VMs:
+Now we see the new data from irb Two. Most of the standard Ruby
+objects are already capable of being persisted (there are a few that
+don't make sense to see in another VM, like Mutex and Socket).  You
+can even persist `Proc`s and `Thread`s and run them on other VMs:
 
     One :006:0> ::PERSISTENT_ROOT[:run_me] = Proc.new { puts "Hi from another VM" }
     => #<Proc>
@@ -100,32 +100,25 @@ You could even make a simple [worker
 queue](https://github.com/jc00ke/maglev-q) in a few lines of Ruby by
 passing procs between VMs.
 
-Threads take a little more effort, because there are a few pitfalls,
-so bear with me:
-
-    One :008:0> Thread.primitive 'make_persistable', 'convertToPersistableState'
-    => Thread
-
-First, we installed an additional primitive that allows persisting Threads.
+Threads cannot be persisted by reference (because the JIT may have
+have compile methods to machine code, which cannot be ported across
+VMs), but we can use a trick.
 
     One :009:0> Thread.start { callcc {|cc| $cont = cc}; p "Run after One pretty callcc" }
     "Run after One pretty callcc"
     => #<GsProcess:0xdf69e01 false>
-    One :010:0> $cont
+    One :010:0> Maglev::PERSISTENT_ROOT["cc"] = $cont
     => #<Continuation:0xecfc401 @_st_process=#<GsProcess:0xdf6a901 sleep>>
-    One :011:0> $cont.instance_variable_get(@_st_process).make_persistable
-    => #<GsProcess:0xdf6a901 sleep>
-    One :012:0> Maglev::PERSISTENT_ROOT["cc"] = $cont
-    => #<Continuation:0xecfc401 @_st_process=#<GsProcess:0xdf6a901 sleep>>
-    One :013:0> Maglev.commit_transaction
+    One :011:0> Maglev.commit_transaction
     => true
 
-Phew, that was a lot of work. What did we do here? Well, we started a thread and created a
-continuation. We keep it around in a global variable. We can see in the inspection output
-that the continuation has a reference to a _copy_ of the Thread that created it. That's what
-we want to persist. Because Threads carry a lot of VM state, and keeping that persistable
-could potentially slow down execution, we have to explicitely mark the continuation's Thread
-persistable.
+What did we do here? Well, we started a thread and created a
+continuation. A continuation captures the state of a computation,
+effectively copying the stack at the point it was created (We can see
+in the inspection output that the continuation has a reference to a
+_copy_ of the Thread that created it). We assign the continuation to a
+global variable for convenience, and then commit it to the Stone
+repository.
 
 On to the second VM:
 
@@ -137,7 +130,8 @@ On to the second VM:
     "Run after One pretty callcc"
     => #<GsProcess:0xdd33b01 sleep>
 
-Wow. We just moved a complete stack on to a different VM and resumed it there.
+Wow. We just copied a complete thread on to a different VM and resumed
+it there.
 
 So much for examples, more example code can be found in the
 [hat trick example](https://github.com/MagLev/maglev/tree/master/examples/persistence/hat_trick)
