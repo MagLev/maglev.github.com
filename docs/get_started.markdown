@@ -3,19 +3,22 @@ title: Get Started with MagLev
 layout: docs
 ---
 
-# Install and Start MagLev
+# MagLev QuickStart
 
-1. Install MagLev with [RVM](http://rvm.beginrescueend.com):
+1. Install MagLev from GitHub
 
-       rvm install maglev
-       rvm use maglev
+       git clone git://github.com/MagLev/maglev.git
+       cd maglev
+       ./install.sh
+       export MAGLEV_HOME=$PWD
+       export PATH="$PATH:$MAGLEV_HOME/bin"
 
-   Or, follow the more [detailed instructions](/download.html) to build
+   Or, follow these more [detailed instructions](/download.html) to build
    your own MagLev from source.
 
 1. Check status of MagLev server
 
-       $ $MAGLEV_HOME/bin/maglev status
+       $ maglev status
        MAGLEV_HOME = /users/pmclain/.rvm/rubies/maglev-26852
        Status   Version    Owner    Pid   Port   Started     Type  Name
        ------- --------- --------- ----- ----- ------------ ------ ----

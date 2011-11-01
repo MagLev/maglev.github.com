@@ -9,8 +9,7 @@ title: MagLev
 MagLev is a fast, stable, Ruby implementation with integrated object
 persistence and distributed shared cache.
 
-MagLev is currently in public Alpha, but we expect to release version 1.0
-October 31, 2011.
+MagLev 1.0.0 was released on October 31, 2011.
 
 # Get Started
 
