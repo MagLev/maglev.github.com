@@ -38,18 +38,6 @@ You can run the tests:
 
 # How it all fits together
 
-MagLev is a 64-bit open source (MIT licensed) implementation of
-the Ruby programming language and libraries built on top of VMware's
-GemStone/S 3.1 Virtual Machine.
-
-The MagLev VM takes full advantage of GemStone/S JIT to native code
-performance, distributed shared cache, fully ACID transactions, and
-enterprise class NoSQL data management capabilities to provide a
-robust and durable programming platform. It can transparently manage
-a much larger amount (terabytes) of data and code than will fit in memory.
-There are no restrictions on what types of objects, classes, blocks,
-threads or continuations that can be stored and executed.
-
 MagLev is layered on top of the GemStone/S Virtual Machine, which
 is written in C++ for optimum performance.  To build MagLev, we
 start with a basic GemStone/S system that has been extended especially
