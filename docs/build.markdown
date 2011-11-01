@@ -19,7 +19,8 @@ instructions at <https://github.com/maglev/maglev> for details.
 
 ## Step 3: Build MagLev image and start it
 
-The following command will turn the smalltalk image
+The following command will transform the base Smalltalk image that
+comes with GemStone/S
 (<tt>$MAGLEV_HOME/gemstone/bin/extent0.dbf</tt>) into a Ruby image and put
 it in <tt>$MAGLEV_HOME/bin/extent0.ruby.dbf</tt>:
 
@@ -37,40 +38,37 @@ You can run the tests:
 
 # How it all fits together
 
-MagLev is layered on top of the GemStone/S Smalltalk Virtual Machine.  To
-build MagLev, we start with s pure Smalltalk system, and then add layers of
-Ruby features on top of it.  To do this, we use the Smalltalk tools and
-methods to introduce the core ruby extensions needed, and then run the pure
-Ruby definitions after that.
+MagLev is a 64-bit open source (MIT licensed) implementation of
+the Ruby programming language and libraries built on top of VMware's
+GemStone/S 3.1 Virtual Machine.
 
-## VM versus image
+The MagLev VM takes full advantage of GemStone/S JIT to native code
+performance, distributed shared cache, fully ACID transactions, and
+enterprise class NoSQL data management capabilities to provide a
+robust and durable programming platform. It can transparently manage
+a much larger amount (terabytes) of data and code than will fit in memory.
+There are no restrictions on what types of objects, classes, blocks,
+threads or continuations that can be stored and executed.
 
-The GemStone/S VM is just a C++ program that runs and manages an object
-memory.  The VM has an Object Manager that knows how to create, delete and
-otherwise manage objects. The objects live in a large chunk of memory known
-as "object memory".  When the VM starts up, it allocates space for object
-memory, and then loads objects from the image (stored in the stone), puts
-them into object memory and activates them.
+MagLev is layered on top of the GemStone/S Virtual Machine, which
+is written in C++ for optimum performance.  To build MagLev, we
+start with a basic GemStone/S system that has been extended especially
+for MagLev. Once the MagLev VM is bootstrapped, and the requisite
+primitives are loaded, it's ready to run ruby code much like other
+implementations.  The difference is that only MagLev has an integrated
+distributed object cache with transparent object persistence where
+multiple concurrent VM's interact transactionally via shared memory.
+To handle larger amounts of data, the MagLev system has multi-threaded
+garbage collection that runs in a separate VM. Due to it's multi-language
+nature, MagLev can utilize code written in Ruby, Smalltalk, or C++ (through
+its FFI to C++, as well as ruby extensions writen directly in C++.)
 
-The base Smalltalk objects and classes (Object, Class, Array, etc.)  are
-pre-loaded in the Smalltalk image that comes with the VM
-(<tt>$MAGLEV_HOME/gemstone/bin/extent0.dbf</tt>).
-
-The build steps described above add the base Ruby classes and objects on
-top of the Smalltalk image to create the base MagLev image
-(<tt>$MAGLEV_HOME/bin/extent0.ruby.dbf</tt>).  <tt>extent0.ruby.dbf</tt> is
-then copied as the initial extent when you create a new MagLev stone
-(<tt>rake stone:create[maglev]</tt>).
-
-The same GemStone/S VM will run objects served out of either the Smalltalk
-or MagLev extents (they are just plain old objects, as far as the VM and
-Object Manager are concerned).
-
-Once you start persisting your own objects, they too will be stored in the
-stone alongside the base Smalltalk and Ruby objects.
+The build steps described above add the base Ruby classes and objects
+on top of a standard GemStone/S system, and persist them as a base
+MagLev image (<tt>$MAGLEV_HOME/bin/extent0.ruby.dbf</tt>).
 
 The scripts that load the ruby objects into the image are a combination of
-rakefiles (<tt>rakelib/build.rake</tt>) and topaz scripts.  Topaz is a C
+rakefiles (<tt>rakelib/build.rake</tt>) and topaz scripts.  Topaz is a C++
 program that runs a GemStone VM, and provides a command line interface to
 that VM; see the
 [Topaz Programming Guide](http://community.gemstone.com/download/attachments/6816350/GS64-Topaz-3.0.pdf?version=1).

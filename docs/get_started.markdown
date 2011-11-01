@@ -3,7 +3,7 @@ title: Get Started with MagLev
 layout: docs
 ---
 
-# MagLev QuickStart
+# Get Started with MagLev
 
 1. Install MagLev from GitHub
 
