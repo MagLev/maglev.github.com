@@ -6,10 +6,7 @@ title: MagLev
 
 # MagLev
 
-MagLev is a fast, stable, Ruby implementation with integrated object
-persistence and distributed shared cache.
-
-MagLev is a 64-bit open source (MIT licensed) implementation of
+MagLev is a fast, stable, 64-bit open source (MIT licensed) implementation of
 the Ruby programming language and libraries built on top of VMware's
 GemStone/S 3.1 Virtual Machine.
 
