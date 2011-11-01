@@ -13,7 +13,7 @@ layout: docs
        export MAGLEV_HOME=$PWD
        export PATH="$PATH:$MAGLEV_HOME/bin"
 
-   Or, follow these more [detailed instructions](/download.html) to build
+   Or, follow these more [detailed instructions](/docs/build.html) to build
    your own MagLev from source.
 
 1. Check status of MagLev server
