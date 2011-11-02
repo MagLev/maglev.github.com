@@ -5,8 +5,8 @@ title: Install MagLev
 # Install MagLev
 
 There are two ways to install MagLev:
-* [Install from GitHub](#install_from_github)
 * [Install with Ruby Version Manager (RVM)](#install_with_ruby_version_manager)
+* [Install from GitHub](#install_from_github)
 
 ## Minimum Requirements
 
@@ -14,6 +14,41 @@ There are two ways to install MagLev:
 * 64-bit Linux, Mac OS X, or Solaris X86 operating system
 * a version of ruby and rake to use during installation
 * root access so you can increase default shared memory settings (only during initial install)
+
+# Install with Ruby Version Manager
+
+[RVM](http://rvm.beginrescueend.com) is useful if you want to compare
+behavior of various Ruby implementations or versions of MagLev.  Install
+using:
+
+    rvm install maglev
+
+See the [rvm home page](http://rvm.beginrescueend.com) for details of using
+RVM.
+
+RVM will automatically start a MagLev server when you `rvm use
+maglev`.  That server is left running if you `rvm use any_other_Ruby`.
+
+To stop your MagLev server:
+
+    rvm use maglev
+    maglev stop
+
+Note: `maglev stop` will only stop the version of MagLev currently in use.
+If you're using more than one, you'll have to `maglev stop` each of them -- e.g.
+
+    rvm use maglev-1.0.0
+    maglev stop
+    rvm use maglev-head
+    maglev stop
+
+ProTip: To kill all the MagLev servers rather than shut them down gracefully, run
+`ps -ef | grep /sys/stoned` and kill the `stoned` processes that show up.
+It takes a short time before they shut down, as they do a bit of cleanup first.
+
+Note: When running rake from MagLev, you cannot perform tasks which
+affect MagLev itself, like `rake maglev:stop`. You have to use the
+`bin/maglev` shell script instead.
 
 # Install from GitHub
 
@@ -53,41 +88,6 @@ clone before each `update.sh`, you may be unable to revert to an earlier
 version.  Why? The install/upgrade script creates a new copy of the MagLev
 data repository including persistent kernel code. The scripts make one
 level of backup, but we won't be providing migration scripts quite yet.
-
-# Install with Ruby Version Manager
-
-[RVM](http://rvm.beginrescueend.com) is useful if you want to compare
-behavior of various Ruby implementations or versions of MagLev.  Install
-using:
-
-    rvm install maglev
-
-See the [rvm home page](http://rvm.beginrescueend.com) for details of using
-RVM.
-
-RVM will automatically start a MagLev server when you `rvm use
-maglev`.  That server is left running if you `rvm use any_other_Ruby`.
-
-To stop your MagLev server:
-
-    rvm use maglev
-    maglev stop
-
-Note: `maglev stop` will only stop the version of MagLev currently in use.
-If you're using more than one, you'll have to `maglev stop` each of them -- e.g.
-
-    rvm use maglev-1.0.0
-    maglev stop
-    rvm use maglev-head
-    maglev stop
-
-ProTip: To kill all the MagLev servers rather than shut them down gracefully, run
-`ps -ef | grep /sys/stoned` and kill the `stoned` processes that show up.
-It takes a short time before they shut down, as they do a bit of cleanup first.
-
-Note: When running rake from MagLev, you cannot perform tasks which
-affect MagLev itself, like `rake maglev:stop`. You have to use the
-`bin/maglev` shell script instead.
 
 
 # Download

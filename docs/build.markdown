@@ -9,7 +9,7 @@ layout: docs
     $ git clone git://github.com/MagLev/maglev.git
     $ export MAGLEV_HOME=$PWD/maglev
 
-## Step 2: Install VM
+## Step 2: Install the VM
 
     $ cd $MAGLEV_HOME
     $ ./install.sh

@@ -5,13 +5,10 @@ layout: docs
 
 # Get Started with MagLev
 
-1. Install MagLev from GitHub
+1. Install MagLev with [RVM](http://rvm.beginrescueend.com):
 
-       git clone git://github.com/MagLev/maglev.git
-       cd maglev
-       ./install.sh
-       export MAGLEV_HOME=$PWD
-       export PATH="$PATH:$MAGLEV_HOME/bin"
+       rvm install maglev
+       rvm use maglev
 
    Or, follow these more [detailed instructions](/docs/build.html) to build
    your own MagLev from source.
@@ -19,11 +16,11 @@ layout: docs
 1. Check status of MagLev server
 
        $ maglev status
-       MAGLEV_HOME = /users/pmclain/.rvm/rubies/maglev-26852
+       MAGLEV_HOME = /users/pmclain/.rvm/rubies/maglev-1.0.0
        Status   Version    Owner    Pid   Port   Started     Type  Name
        ------- --------- --------- ----- ----- ------------ ------ ----
-         OK    3.1.0     pmclain   48498 55390 Oct 19 10:06 Stone  maglev
-         OK    3.1.0     pmclain   48499 55382 Oct 19 10:06 cache  maglev~3330cca3ca1d1f74
+         OK    3.1.0     pmclain   48498 55390 Oct 31 10:06 Stone  maglev
+         OK    3.1.0     pmclain   48499 55382 Oct 31 10:06 cache  maglev~3330cca3ca1d1f74
 
    If the server is not running, you'll see output like:
 
