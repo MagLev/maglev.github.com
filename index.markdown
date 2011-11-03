@@ -6,9 +6,9 @@ title: MagLev
 
 # MagLev
 
-MagLev is a fast, stable, 64-bit open source (MIT licensed) implementation of
-the Ruby programming language and libraries built on top of VMware's
-GemStone/S 3.1 Virtual Machine.
+MagLev is a fast, stable, 64-bit [open source](https://github.com/MagLev/maglev/blob/master/Licenses/README.txt)
+implementation of the Ruby programming language and libraries built
+on top of VMware's GemStone/S 3.1 Virtual Machine.
 
 The MagLev VM takes full advantage of GemStone/S JIT to native code
 performance, distributed shared cache, fully ACID transactions, and
