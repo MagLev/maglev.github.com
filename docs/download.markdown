@@ -55,6 +55,9 @@ affect MagLev itself, like `rake maglev:stop`. You have to use the
 This version is best for MagLev contributors and for developers who like to
 live on the bleeding edge or use git tools.
 
+Create a new directory on a local (not NFS) file system to hold the
+MagLev source tree and other files. Change to that directory, then:
+
 1. Clone the MagLev github repository then set `$MAGLEV_HOME` and your `$PATH`
 
        git clone git://github.com/MagLev/maglev.git

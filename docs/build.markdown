@@ -4,7 +4,9 @@ layout: docs
 ---
 # Build MagLev from Source
 
-## Step 1: Install the MagLev source:
+## Step 1: Install the MagLev source
+Create a new directory on a local (not NFS) file system to hold the
+MagLev source tree and other files. Change to that directory, then:
 
     $ git clone git://github.com/MagLev/maglev.git
     $ export MAGLEV_HOME=$PWD/maglev
