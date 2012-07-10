@@ -84,7 +84,7 @@ objects are already capable of being persisted (there are a few that
 don't make sense to see in another VM, like Mutex and Socket).  You
 can even persist `Proc`s and `Thread`s and run them on other VMs:
 
-    One :006:0> ::PERSISTENT_ROOT[:run_me] = Proc.new { puts "Hi from another VM" }
+    One :006:0> Maglev::PERSISTENT_ROOT[:run_me] = Proc.new { puts "Hi from another VM" }
     => #<Proc>
     One :007:0> Maglev.commit_transaction
     => true
