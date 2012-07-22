@@ -101,7 +101,7 @@ queue](https://github.com/jc00ke/maglev-q) in a few lines of Ruby by
 passing procs between VMs.
 
 Threads cannot be persisted by reference (because the JIT may have
-have compile methods to machine code, which cannot be ported across
+compiled methods to machine code, which cannot be ported across
 VMs), but we can use a trick.
 
     One :009:0> Thread.start { callcc {|cc| $cont = cc}; p "Run after One pretty callcc" }
