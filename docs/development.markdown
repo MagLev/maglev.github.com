@@ -138,7 +138,7 @@ running off when running Ruby code. So we symlink that, too:
     $ rm data/maglev/extent/extent0.ruby.dbf
     $ ln -s fileintmp/extent0.ruby.dbf data/maglev/extent/extent0.ruby.dbf
 
-### Load the Ruby Ruby core
+### Load the Ruby core
 
 Now, finally, we can actually run some Ruby code. Nothing too serious, yet,
 but enough to load the other half of Ruby core written in Ruby. Much
