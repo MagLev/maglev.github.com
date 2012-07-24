@@ -164,8 +164,9 @@ Ruby code. Like this:
 ## Step 4: Great rejoicing
 
 That's it, you have a basic development environment. You can now pick a
-feature or try and fix an issue. If you don't know where the problem
-is, look around the code and get a feel for what goes where.
+feature or try and [fix an issue](https://github.com/MagLev/maglev/issues).
+If you don't know where the problem is, look around the code and get a feel 
+for what goes where.
 
 There's a few more things to talk about, like how to work with
 branches, where to write tests and how to debug using Topaz and
