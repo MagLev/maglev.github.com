@@ -24,3 +24,58 @@ MagLev 1.0.0 was released on October 31, 2011.
 
 If you are interested in persistent distributed Ruby objects, [get started
 with MagLev](/docs/get_started.html).
+
+# Licensing & Pricing
+
+MagLev itself (the Ruby & Smalltalk source released on Github) is free. GemStone/S is licensed based on resources. The free version below is perfectly sufficient for small to medium sized projects.
+
+<table id="matrix">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3">GemStone/S 64-bit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td>Price</td>
+      <td>Free</td>
+      <td>$7k/core</td>
+      <td>$15k/core</td>
+    </tr>
+    <tr>
+      <td>Maxiumum Cores Used</td>
+      <td>2</td>
+      <td>4</td>
+      <td>8</td>
+    </tr>
+    <tr class="odd">
+      <td>Maximum RAM<br />(Shared Page Cache Size)</td>
+      <td>2GB</td>
+      <td>2GB</td>
+      <td>4GB</td>
+    </tr>
+    <tr>
+      <td>Maximum Disk<br />(Repository Size)</td>
+      <td colspan="3">Unlimited</td>
+    </tr>
+    <tr class="odd">
+      <td>Clustered Servers<br />(Remote Gems)</td>
+      <td colspan="3">No</td>
+    </tr>
+    <tr>
+      <td>Linux/OS X</td>
+      <td colspan="3">Yes</td>
+    </tr>
+    <tr class="odd">
+      <td>Windows/Solaris/Aix/HP-UX</td>
+      <td colspan="3">No</td>
+    </tr>
+    <tr>
+      <td>Support</td>
+      <td>Community</td>
+      <td>Contact</td>
+      <td>Contact</td>
+    </tr>
+  </tbody>
+</table>

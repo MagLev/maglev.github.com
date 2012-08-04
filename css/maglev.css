@@ -51,3 +51,20 @@ pre {
     border-radius: 15px;
     -moz-border-radisu: 15px;
 }
+
+#matrix {
+  border-collapse: collapse;
+}
+
+#matrix th, #matrix td {
+  padding: 10px;
+  text-align: center;
+}
+
+#matrix, #matrix th, #matrix td  {
+  border: 1px solid #000;
+}
+
+.odd {
+  background-color: #ccc;
+}
