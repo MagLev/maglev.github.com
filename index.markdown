@@ -38,7 +38,7 @@ MagLev itself (the Ruby & Smalltalk source released on Github) is free. GemStone
   </thead>
   <tbody>
     <tr class="odd">
-      <td>Price</td>
+      <td>Price*</td>
       <td>Free</td>
       <td>$7k/core</td>
       <td>$15k/core</td>
@@ -76,6 +76,11 @@ MagLev itself (the Ruby & Smalltalk source released on Github) is free. GemStone
       <td>Community</td>
       <td>Contact</td>
       <td>Contact</td>
+    </tr>
+    <tr>
+      <td colspan="4" class="notes">
+        * Perpetual license (one time purchase)
+      </td>
     </tr>
   </tbody>
 </table>

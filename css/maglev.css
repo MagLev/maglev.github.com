@@ -68,3 +68,7 @@ pre {
 .odd {
   background-color: #ccc;
 }
+
+.notes {
+  text-align: left !important;
+}
