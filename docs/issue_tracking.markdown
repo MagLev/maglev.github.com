@@ -1,6 +1,6 @@
 ---
 title: Report an Issue with MagLev
-layout: docs
+layout: default
 ---
 # MagLev Issue Reports
 
