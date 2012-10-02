@@ -125,7 +125,7 @@ in <tt>bin/</tt>, but we'll want to be able to just run the
 <tt>build:mczdir</tt> task again to update Smalltalk code in our
 stones. So let's link the image file instead:
 
-    $ ln -s fileintmp/extent0.ruby.dbf bin/extent0.ruby.dbf
+    $ ln -s $MAGLEV_HOME/fileintmp/extent0.ruby.dbf bin/extent0.ruby.dbf
 
 Then create a stone
 
@@ -136,7 +136,7 @@ This will copy the image file to
 running off when running Ruby code. So we symlink that, too:
 
     $ rm data/maglev/extent/extent0.ruby.dbf
-    $ ln -s fileintmp/extent0.ruby.dbf data/maglev/extent/extent0.ruby.dbf
+    $ ln -s $MAGLEV_HOME/fileintmp/extent0.ruby.dbf data/maglev/extent/extent0.ruby.dbf
 
 ### Load the Ruby core
 
