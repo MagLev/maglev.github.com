@@ -8,7 +8,7 @@ There are three ways to install MagLev:
 
 * [Install with Ruby Version Manager (RVM)](#install_with_ruby_version_manager)
 * [Install from GitHub](#install_from_github)
-* [Install a a specific MagLev release](#Install_a_specific_MagLev_release)
+* [Install a specific MagLev release](#install_a_specific_maglev_release)
 
 ## Minimum Requirements
 
