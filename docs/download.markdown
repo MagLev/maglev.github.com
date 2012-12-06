@@ -4,9 +4,11 @@ title: Install MagLev
 ---
 # Install MagLev
 
-There are two ways to install MagLev:
+There are three ways to install MagLev:
+
 * [Install with Ruby Version Manager (RVM)](#install_with_ruby_version_manager)
 * [Install from GitHub](#install_from_github)
+* [Install a a specific MagLev release](#Install_a_specific_MagLev_release)
 
 ## Minimum Requirements
 
@@ -93,8 +95,12 @@ data repository including persistent kernel code. The scripts make one
 level of backup, but we won't be providing migration scripts quite yet.
 
 
-# Download
+# Install a specific MagLev release
 
-You can download this project in either
-[zip](http://github.com/MagLev/maglev/zipball/master) or
-[tar](http://github.com/MagLev/maglev/tarball/master) formats.
+This retrieves a specific tested release of MagLev rather than the current development version.
+
+1. Go to the [MagLev archive](http://glass-downloads.gemstone.com/maglev/)
+2. Download a standard MagLev release -- *e.g. MagLev-1.1beta2.tar.gz*, or it's equivalent git archive -- *e.g. MagLev-1.1beta2-git.tar.gz*. 
+3. Uncompress the archive, cd to the newly created directory, and follow the process in [Install from GitHub](#install_from_github) starting from the `export MAGLEV_HOME=$PWD` step.
+
+
