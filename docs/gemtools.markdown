@@ -1,6 +1,7 @@
 ---
 title: GemTools on MagLev
 layout: docs
+gemtools_version: GemTools-1.0-beta.8.7-310x
 ---
 
 # GemTools Smalltalk Browser for MagLev
@@ -15,9 +16,9 @@ on Linux and OSX.
 
 ## Install GemTools
 
-1. Download [GemTools-MagLev-1.0.0.zip](http://seaside.gemstone.com/squeak/GemTools-MagLev-1.0.0.zip)
+1. Download [{{page.gemtools_version}}](http://seaside.gemstone.com/squeak/{{page.gemtools_version}}.zip)
 1. Unzip the archive.
-   You should have a directory named `GemTools-MagLev-1.0.0.app`.
+   You should have a directory named `{{page.gemtools_version}}.app`.
 
    OSX users may want to move it to `/Applications`.
 
@@ -35,10 +36,10 @@ on Linux and OSX.
 
 1. Start GemTools
 
-   OSX users can either `open GemTools-MagLev-1.0.0.app` or open it from
+   OSX users can either `open {{page.gemtools_version}}.app` or open it from
    the Finder as a normal OSX app.
 
-   Linux users can run `GemTools-MagLev-1.0.0.app/Pharo.sh`.
+   Linux users can run `{{page.gemtools_version}}.app/Pharo.sh`.
 
 1. Connect to MagLev
 
