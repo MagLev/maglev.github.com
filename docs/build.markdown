@@ -36,7 +36,7 @@ Now you should be able to run ruby on MagLev:
 
 You can run the tests:
 
-    $ rake tests
+    $ rake spec:ci
 
 # How it all fits together
 
